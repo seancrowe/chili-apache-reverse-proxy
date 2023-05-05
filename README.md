@@ -62,6 +62,8 @@ In a browser make sure to type in the IP with protocol HTTPS on port 8080.
 
 Example: `https://127.0.0.1:8080`
 
+For most browsers, you will get a page a warning about "Your connection is not private", but just click `Advance` and the `Proceed` link.
+
 A page will show with the header "This is a reverse proxy".
 
 ### Step 4
