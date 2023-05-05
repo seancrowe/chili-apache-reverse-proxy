@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    container_name: chili-apache-proxy
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "8080:443"
+    command: sh -c "chmod +x /var/www/html/start.sh && /var/www/html/start.sh" 
