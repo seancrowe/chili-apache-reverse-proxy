@@ -6,4 +6,5 @@ RUN rm /var/www/html/index.html && \
     a2enmod proxy_http && \
     a2enmod proxy_connect && \
     a2enmod headers && \
-    a2enmod actions
+    a2enmod actions && \
+    a2enmod substitute
