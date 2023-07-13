@@ -1,4 +1,4 @@
-# CHILI Apache Reverse Proxy
+# CHILI Apache Reverse Proxy Load Latest
 This is an example project to be able to see how a reverse proxy is setup for CHILI Publisher
 
 No support will be given for this example.
@@ -62,15 +62,30 @@ In a browser make sure to type in the IP with protocol HTTPS on port 8080.
 
 Example: `https://127.0.0.1:8080`
 
+### Optional - Change Port
+If you don't want to use port 8080, but want to use port 433, then open docker-compose.yaml and change this:
+
+```yaml
+ ports:
+      - "8080:443"
+```
+
+to this:
+
+```yaml
+ ports:
+      - "433:443"
+```
+
 For most browsers, you will get a page a warning about "Your connection is not private", but just click `Advance` and the `Proceed` link.
 
 A page will show with the header "This is a reverse proxy".
 
 ### Step 4
-For the environment you want to test, grab a document ID, an API key with proper permissions created in that environment, and the environment name.
+In your integration make sure to open your editor using the reverse proxy URL:
 
-For example, with the base `example.conf`, I would use `ft-nostress` for the environment.
+```
+`https://127.0.0.1:8080/editor/{environment}/editor_html.aspx
+```
 
-Past your document ID, API key, and environment name into the input fields and press `Add Iframe`.
-
-⚠️ Be careful that your document ID and API key are from the same environment, and that environment can be loaded with the base URL found in the `example.conf`.
+Now the Editor will load with the latest Publisher Interface.

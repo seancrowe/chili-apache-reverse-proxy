@@ -1,27 +1,7 @@
 <html>
-    <body>
-        <h1>This is a reverse proxy</h1>
-        <p>Make sure to update the iframeSrc in the index.html. Don't forget to update your chiliInternalWrapper.min.js and PublisherInterface.min.js files</p>
-        <button onclick="addIframe()">Add Iframe</button>
 
-        <script type="module">
-            import {PublisherInterface} from './PublisherInterface.min.js';
-        
-            window.addIframe = async () => {   
-                // Construct the URL for the iframe
-                const iframeSrc = window.location.href + "/editor/ft-nostress/editor_html.aspx?doc=90e8e564-4817-40d0-ab66-5a68b16fed75&apiKey=GX0ohac4kIeDCqbd5";
+<body>
+  <h1>This is a reverse proxy</h1>
+</body>
 
-                // Create the iframe element
-                const iframe = document.createElement("iframe");
-                iframe.src = iframeSrc;
-                iframe.style.width = "95vw";
-                iframe.style.height = "95vh";
-                const publisherBuild = PublisherInterface.build(iframe);
-                document.body.appendChild(iframe);
-                const publisher = await publisherBuild;
-                window.publisher = publisher;
-            }
-        </script>
-    </body>
 </html>
-
